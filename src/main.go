@@ -22,7 +22,6 @@ type CLI struct {
 
 	Markdown MarkdownCmd `help:"publish as simple markdown" cmd:""`
 	Hugo     HugoCmd     `help:"publish as hugo content" cmd:""`
-	Henson   HensonCmd   `help:"say something about Danny Henson" cmd:"" hidden:"true"`
 }
 
 type CommonConvert struct {
@@ -207,13 +206,4 @@ func main() {
 	})
 	err := ctx.Run(&Context{})
 	ctx.FatalIfErrorf(err)
-}
-
-type HensonCmd struct {
-}
-
-func (hc *HensonCmd) Run(ctx *Context) error {
-	fmt.Println("Danny Henson.")
-
-	return nil
 }
